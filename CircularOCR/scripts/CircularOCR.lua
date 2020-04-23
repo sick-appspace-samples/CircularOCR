@@ -2,7 +2,7 @@
 print('AppEngine Version: ' .. Engine.getVersion())
 
 -- Delay in ms between visualization steps for demonstration purpose only
-local DELAY = 2000
+local DELAY = 100
 
 -- Creating viewer
 local viewer = View.create()
@@ -31,7 +31,7 @@ local function warpAndDisplaySector(filename, sector)
   viewer:addImage(image)
   viewer:addShape(sector, shapeDecoration)
   viewer:present()
-  Script.sleep(DELAY) -- for demonstration purpose only
+  Script.sleep(DELAY*20) -- for demonstration purpose only
 
   return warped
 end
@@ -45,7 +45,7 @@ local function drawBoundingBoxes(characters, charRegions)
     textDeco:setPosition(CoG:getX() - 5, CoG:getY() + 50)
     viewer:addText(characters:sub(j, j), textDeco)
     viewer:present() -- can be put outside loop if not for demonstration
-    Script.sleep(100) -- for demonstration purpose only
+    Script.sleep(DELAY) -- for demonstration purpose only
   end
 end
 
