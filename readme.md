@@ -1,12 +1,19 @@
 ## CircularOCR
+
 Reading text printed in a circular pattern using Image.warpSector to
 un-warp the text region prior to reading.
 
 ### Description
+
+Disclaimer: this sample will run only on physical AppSpace enabled device such as
+InspectorP or SIM or with Software AppEngine when a valid HALCON license is
+installed and available.
+
 This Sample creates a sector shape for each sample image and warps the image
 region in that sector to produce an un-warped image region in which the text can be read.
 
 ### How to Run
+
 Starting this sample is possible either by running the App (F5) or
 debugging (F7+F10). Setting breakpoint on the first row inside the 'main'
 function allows debugging step-by-step after 'Engine.OnStarted' event.
@@ -18,7 +25,9 @@ Alternatively the Emulator in AppStudio 2.3 or higher can be used in conjunction
 with a HALCON developer license and dongle.
 
 ### More Information
+
 Tutorial "Algorithms - OCR"
 
 ### Topics
-Algorithm, Image-2D, OCR, Sample, SICK-AppSpace
+
+algorithm, image-2d, ocr, sample, sick-appspace, halcon
