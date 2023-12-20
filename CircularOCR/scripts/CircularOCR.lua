@@ -5,21 +5,18 @@ print('AppEngine Version: ' .. Engine.getVersion())
 local DELAY = 100
 
 -- Creating viewer
-local viewer = View.create('viewer2D1')
+local viewer = View.create()
 
 -- Setting up graphical overlay attributes
 local shapeDecoration = View.ShapeDecoration.create()
-shapeDecoration:setLineColor(0, 255, 0)
-shapeDecoration:setLineWidth(1)
-local textDeco = View.TextDecoration.create()
-textDeco:setSize(20)
-textDeco:setColor(0, 255, 0)
-local prDeco = View.PixelRegionDecoration.create()
-prDeco:setColor(0, 0, 255, 48)
+shapeDecoration:setLineColor(0, 255, 0):setLineWidth(1)
+local textDeco = View.TextDecoration.create():setSize(20):setColor(0, 255, 0)
+local prDeco = View.PixelRegionDecoration.create():setColor(0, 0, 255, 48)
 
 --End of Global Scope-----------------------------------------------------------
 
 --Start of Function and Event Scope---------------------------------------------
+
 local function warpAndDisplaySector(filename, sector)
   -- Load image.
   local image = Image.load(filename)
@@ -44,7 +41,7 @@ local function drawBoundingBoxes(characters, charRegions)
     local CoG = box:getCenterOfGravity()
     textDeco:setPosition(CoG:getX() - 5, CoG:getY() + 50)
     viewer:addText(characters:sub(j, j), textDeco)
-    viewer:present() -- can be put outside loop if not for demonstration
+    viewer:present("ASSURED") -- can be put outside loop if not for demonstration
     Script.sleep(DELAY) -- for demonstration purpose only
   end
 end
